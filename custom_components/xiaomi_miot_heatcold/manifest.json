@@ -1,6 +1,6 @@
 {
-  "domain": "xiaomi_miot_heatcold",
-  "name": "Custom component to support HeatCold electric floor controller",
+  "domain": "xiaomi_miot_leshi-v002",
+  "name": "Custom component to support 3rd party switch",
   "documentation": "",
   "requirements": [
     "construct==2.9.45",
@@ -8,6 +8,6 @@
   ],
   "dependencies": [],
   "codeowners": [
-    "@SpeedFire0:"
+    "@blindlight86:"
   ]
 }
