@@ -1,5 +1,5 @@
-# Xiaomi MIOT HeatCold
-A simple example of a Home Assistant extension for Xiaomi HeatCold heating floor controller (cubee.airrtc.th123e) as a switch.
+# Xiaomi MIOT Leshi-v002
+A simple example of a Home Assistant extension for Xiaomi 3rd party switch (leshi.switch.v002).
 This only switches on/off the device.
 
 # Install
@@ -10,8 +10,8 @@ You can install it manually by copying the custom_component folder to your Home 
 # configuration.yaml
 
 switch:
-  - platform: xiaomi_miot_heatcold
-    name: HeatCold controller
+  - platform: xiaomi_miot_leshi-v002
+    name: Mi WiFi Switch X
     host: 192.168.1.152
     token: b110204d86732b019d3d6axxxxb9ad3a
 ```

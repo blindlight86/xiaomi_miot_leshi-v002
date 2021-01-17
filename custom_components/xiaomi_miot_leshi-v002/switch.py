@@ -11,8 +11,8 @@ from homeassistant.exceptions import PlatformNotReady
 
 _LOGGER = logging.getLogger(__name__)
 
-DEFAULT_NAME = "HeatCold Controller"
-DATA_KEY = "switch.xiaomi_miot_heatcold"
+DEFAULT_NAME = "On/Off Switch"
+DATA_KEY = "switch.xiaomi_miot__leshi-v002"
 
 CONF_TURN_ON_COMMAND = "turn_on_command"
 CONF_TURN_ON_PARAMETERS = "turn_on_parameters"
@@ -151,7 +151,7 @@ class XiaomiHeatcoldDevice(SwitchEntity):
             "Turning the miio device on failed.",
             self._device.send,
             'set_properties',
-            [{"did":"MYDID","siid":2,"piid":1,"value":True}],
+            [{"did":"MYDID","siid":3,"piid":1,"value":1}],
         )
 
         if result:
@@ -163,7 +163,7 @@ class XiaomiHeatcoldDevice(SwitchEntity):
             "Turning the miio device off failed.",
             self._device.send,
             'set_properties',
-            [{"did":"MYDID","siid":2,"piid":1,"value":False}],
+            [{"did":"MYDID","siid":3,"piid":1,"value":0}],
         )
 
         if result:
@@ -178,10 +178,6 @@ class XiaomiHeatcoldDevice(SwitchEntity):
                 self._device.send, 'get_properties', 
                 [
                     {"did":"MYDID","siid":2,"piid":1},
-                    # {"did":"state_code","siid":2,"piid":3},
-                    # {"did":"poweroff_time","siid":2,"piid":6},
-                    # {"did":"countdown","siid":2,"piid":7},
-                    # {"did":"child_lock","siid":4,"piid":1}
                 ]
             )
             state = state.pop()
